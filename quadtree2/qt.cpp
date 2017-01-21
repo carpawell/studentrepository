@@ -1,9 +1,11 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
+#include <string>
+#include <string.h>
+#include <cstring>
 
 using namespace std;
-
 int Rsize = 128;
 
 template <class ValueT>
@@ -173,17 +175,32 @@ struct QTree {
 
 int main() {
 	QTree<int> tree(Rsize);
-	tree.insert(16, 112, 1);
-	tree.insert(16, 80, 2);
-	tree.insert(48, 112, 3);
-	tree.insert(48, 80, 4);
-	tree.insert(16, 48, 5);
-	tree.getnearest(16, 63, 18);
-	/*if (tree.get(45, 35) != nullptr) cout << *tree.get(45, 35) << endl;
-	if (tree.get(43, 35) != nullptr) cout << *tree.get(43, 35) << endl;
-	tree.del(45, 35);
-	if (tree.get(45, 35) != nullptr) cout << *tree.get(45, 35);
-	if (tree.get(42, 35) != nullptr) cout << *tree.get(42, 35);*/
-	cin.get();
+	system("CLS");
+	while (1) {
+		string com;
+		int ik;
+		int ig;
+		int value;
+		
+		cout << "enter command, two numbers, value('0' for command 'get')" << endl;
+		cin >> com >> ik >> ig >> value;
+		if (com == "exit") {
+			break;
+		}
+		else if (com == "delete") {
+			tree.del(ik, ig);
+			system("CLS");
+		}
+		else if (com == "insert") {
+			tree.insert(ik, ig, value);
+			system("CLS");
+		}
+		else if (com == "getnearest") {
+			tree.getnearest(ik, ig, value);
+		}
+		else if (com == "get") {
+			if (tree.get(ik, ig) != nullptr) cout << *tree.get(ik, ig) << endl;
+		};
+	}
 	return 0;
 }
