@@ -9,9 +9,9 @@ All forms of quadtrees share some common features:
 2) Each cell (or bucket) has a maximum capacity. When maximum capacity is reached, the bucket splits
 3) The tree directory follows the spatial decomposition of the quadtree.
 
-For deletion enter "delete x y 0"; x, y - coordinates point you want to delete
-For addition enter "insert x y z"; x, y - coordinates point you want to add, z - value
-For getting nearest some point enter "getnearest x y z"; x, y - coordinates point you want get near by, z - radius
-For getting some point enter "get x y 0"; x, y - coordinates point you want to get
+For deletion enter "delete x y 0"; x, y - coordinates point you want to delete. 
+For addition enter "insert x y z"; x, y - coordinates point you want to add, z - value. 
+For getting nearest some point enter "getnearest x y z"; x, y - coordinates point you want get near by, z - radius. 
+For getting some point enter "get x y 0"; x, y - coordinates point you want to get. 
 
-To exit enter "exit 0 0"
+To exit enter "exit 0 0".
